@@ -55,7 +55,7 @@ class FourCal:
 
 #########################################
 
-# "Differences between None __init__ and __init__"
+### "Differences between None __init__ and __init__"
 
 class HousePark:
      lastname = "박"
@@ -72,8 +72,13 @@ class HousePark:
      def travel(self, where):
           print("%s, %s 여행을 가다." % (self.fullname, where))
 
-# "상속(Inheritance)"
+### "상속(Inheritance)"
 
 class HouseKim(HousePark):
 	lastname = "김"
+
+class HouseKim(HousePark):
+	lastname = "김"
+	def travel(self, where, day):
+		print("%s, %s여행을 %d일 가네." % (self.fullname, where, day))
 
