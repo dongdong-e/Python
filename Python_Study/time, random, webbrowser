@@ -36,3 +36,7 @@ print(data)
 import webbrowser
 address = input("웹주소를 입력하세요")
 webbrowser.open(address)
+
+address = input("웹주소를 입력하세요")
+webbrowser.open_new(address)
+
