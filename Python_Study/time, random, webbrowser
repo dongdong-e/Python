@@ -30,3 +30,9 @@ import random
 data = [1, 2, 3, 4, 5]
 random.shuffle(data)
 print(data)
+
+###webbrowser
+
+import webbrowser
+address = input("웹주소를 입력하세요")
+webbrowser.open(address)
