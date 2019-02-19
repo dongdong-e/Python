@@ -1,0 +1,24 @@
+import time
+for i in range(10):
+    print(i)
+    time.sleep(1)
+
+###################################
+
+import calendar
+print(calendar.calendar(2015))
+
+calendar.prmonth(2019, 2)
+
+calendar.weekday(2015, 12, 31)
+
+###################################
+
+import random
+def random_pop(data):
+    number = random.randint(0, len(data)-1)
+    return data.pop(number)
+
+if __name__ == "__main__":
+    data = [1, 2, 3, 4, 5]
+    while data: print(random_pop(data))
