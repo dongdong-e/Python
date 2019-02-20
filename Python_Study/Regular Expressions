@@ -8,3 +8,13 @@ if m:
     print('Match found:', m.group())
 else:
     print('Not Match')
+
+#####
+
+Match와 Search의 차이점 => Match는 순서대로 검색 Search는 전체를 검색
+
+m = p.search("python")
+print(m)
+
+n = p.search("3 python")
+print(n)
