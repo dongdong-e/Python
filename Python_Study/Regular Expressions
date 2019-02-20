@@ -1,0 +1,10 @@
+# Regular Expressions(정규표현식)
+
+import re
+p = re.compile('[a-z]+')
+m = p.match("youngdong")
+
+if m:
+    print('Match found:', m.group())
+else:
+    print('Not Match')
