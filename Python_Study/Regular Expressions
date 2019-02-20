@@ -18,3 +18,19 @@ print(m)
 
 n = p.search("3 python")
 print(n)
+
+#####
+
+findall 메서드는 p = re.compile('[a-z]+') 정규식과 매치되어 리스트로 리턴
+
+result = p.findall("life is too short")
+print(result)
+
+#####
+
+finditer 메서드는 findall과 동일하지만 그 결과로 반복 가능한 객체를 리턴한다.
+
+result = p.finditer("life is too short")
+print(result)
+
+for r in result: print(r)
