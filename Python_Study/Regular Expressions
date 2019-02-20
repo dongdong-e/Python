@@ -38,10 +38,10 @@ for r in result: print(r)
 ##### match 객체의 메서드
 
 import re
-p = re.compile('[a-z]+')
+p = re.compile('[a-z]+') => re.compile('\D+')
 m = p.match("python")
 
 m.group() -> 매치된 문자열을 리턴
 m.start() -> 매치된 문자열의 시작 위치를 리턴
 m.end() -> 매치된 문자열의 끝 위치를 리턴
-m.span() -> 매치된 문자열의 (시작, 끝)에 해당하는 튜플을 
+m.span() -> 매치된 문자열의 (시작, 끝)에 해당하는 튜플을 리턴
