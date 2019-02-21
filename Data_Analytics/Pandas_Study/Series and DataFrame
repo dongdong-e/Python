@@ -1,0 +1,36 @@
+############################################################
+# Series 만들기
+series1 = pd.Series(['banana', 42])
+series2 = pd.Series(['Wes McKinney', 'Creator of Pandas'])
+# index 인자로 문자열 인덱스로 지정하기
+series3 = pd.Series(['Wes McKinney', 'Creator of Pandas'], index = ['Person', 'Who'])
+############################################################
+# DataFrame 만들기
+scientists = pd.DataFrame({
+    'Name': ['Rosaline Franklin', 'William Gosset'],
+    'Occupation': ['Chemist', 'Statistician'],
+    'Born': ['1920-07-25', '1876-06-13'],
+    'Died': ['1958-04-16', '1937-10-16'],
+    'Age': [37, 61]
+})
+# index 인자로 문자열 인덱스로 지정하기
+scientists = pd.DataFrame(
+    data = {'Occupation': ['Chemist', 'Statistician'],
+            'Born': ['1920-07-25', '1876-06-13'],
+            'Died': ['1958-04-16', '1937-10-16'],
+            'Age': [37, 61]},
+    index = ['Rosaline Franklin', 'William Gosset'],
+    columns = ['Occupation', 'Born', 'Age', 'Died']
+)
+# DataFrame 생성할 때 순서 유지하기
+from collections import OrderedDict
+
+scientists = pd.DataFrame(OrderedDict([
+    ('Name', ['Rosaline Franklin', 'William Gosset']),
+    ('Occupation', ['Chemist', 'Statistician']),
+    ('Born', ['1920-07-25', '1876-06-13']),
+    ('Died', ['1958-04-16', '1937-10-16']),
+    ('Age', [37, 61])
+])
+)
+############################################################
