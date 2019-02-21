@@ -34,3 +34,13 @@ scientists = pd.DataFrame(OrderedDict([
 ])
 )
 ############################################################
+# 특정 인덱스만 받아오기
+first_row = scientists.loc['William Gosset']
+print(first_row.index())
+
+# Series의 mean, min, max, std 메서드 사용하기
+ages = scientists['Age']
+print(ages.mean())
+print(ages.min())
+print(ages.max())
+print(ages.std())
