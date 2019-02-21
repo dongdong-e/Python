@@ -70,3 +70,6 @@ print(subset.head())
 subset = df.iloc[:, 0:6:2]
 print(subset.head())
 print(df.loc[[0, 99, 999], ['country', 'lifeExp', 'gdpPercap']])
+
+subset = df.loc[10:14, ['country', 'lifeExp', 'gdpPercap']]
+print(subset)
