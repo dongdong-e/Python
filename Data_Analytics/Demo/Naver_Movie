@@ -12,5 +12,8 @@ with urllib.request.urlopen(url) as response:
 titles = soup.find_all('div', {'class': 'tit5'})
 ratings = soup.find_all('td', {'class': 'point'})
 
+movie = []
 for i in range(0, 40):
-    print(titles[i].a.string, ratings[i].string)
+    movie.append([titles[i].a.string, ratings[i].string])
+    
+df = pd.DataFrame(movie)
