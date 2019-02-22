@@ -44,3 +44,31 @@ print(ages.mean())
 print(ages.min())
 print(ages.max())
 print(ages.std())
+############################################################
+# 시리즈와 불린 추출 사용하기
+ages = scientists['Age']
+print(ages.mean())
+print(ages[ ages > ages.mean()])
+print(ages > ages.mean())
+
+# 수동(메뉴얼)으로 True, False 지정하여 추출
+manual_bool_values = [True, True, False, False, True, True, False, True]
+print(ages[manual_bool_values])
+############################################################
+# 벡터와 스칼라로 브로드캐스팅 수행하기
+## 같은 길이의 벡터 연산 / 같은 길이의 벡터 출력
+print(ages + ages)
+print(ages * ages)
+## 벡터에 스칼라 연산
+print(ages + 100)
+print(ages * 2)
+
+## 다른 길이의 벡터 연산 / 같은 인덱스 값만 계산 결과가 나오고, 나머지는 누락값(NaN)으로 처리
+print(pd.Series([1, 100]))
+print(ages + pd.Series([1, 100]))
+############################################################
+# 불린 추출하기
+print(scientists[scientists['Age'] > scientists['Age'].mean()])
+
+# 참 / 거짓을 담은 bool 벡터
+print(scientists.loc[[True, True, False, True]])
