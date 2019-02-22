@@ -17,3 +17,12 @@ for i in range(0, 40):
     movie.append([titles[i].a.string, ratings[i].string])
     
 df = pd.DataFrame(movie)
+
+# 그래프로 표현하기
+df = pd.DataFrame(movie, columns = ['title', 'rating'])
+
+import matplotlib.pyplot as plt
+x = list(df['title'].head())
+y = list(df['rating'].head().astype(float))
+plt.plot(x, y)
+plt.show()
