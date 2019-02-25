@@ -63,3 +63,15 @@ axes1.boxplot([tips[tips['sex'] == 'Female']['tip'],
 axes1.set_xlabel("Sex")
 axes1.set_ylabel("Tip")
 axes1.set_title('Boxplot of Tips by Sex')
+
+# 단변량 그래프 그리기 - 히스토그램
+ax = plt.subplots()
+ax = sns.distplot(tips["total_bill"])  # distplot 메서드는 히스토그램과 밀집도를 같이 노출
+ax.set_title("Total Bill Histogram with Density Plot")
+
+# 단변량 그래프 그리기 - 히스토그램 / 밀집도 그래프 삭제하기 kde = False
+ax = plt.subplots()
+ax = sns.distplot(tips["total_bill"], kde = False) # 밀집도 그래프 삭제하기 kde = False
+ax.set_title("Total Bill Histogram with Density Plot")
+ax.set_xlabel("Total Bill")
+ax.set_ylabel("Frequency")
