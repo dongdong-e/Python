@@ -10,14 +10,21 @@ gmaps = googlemaps.Client(key = gmaps_key)
 crime_seoul = pd.read_csv("crime_Seoul2.csv", encoding = "utf-8",
                          index_col = 0)
 
-# 위치 파악하기 / 위도-경도 추출
-tmp2 = gmaps.geocode("서울중부경찰서", language = "kr")
-tmp2[0].get("fomartted_address")
-tmp3 = tmp2[0].get("geometry")
-tmp3["location"]["lat"], tmp3["location"]["lng"]
+#
+crime_seoul['관서명']
+stations1 = []
+for name in crime_seoul['관서명'] :
+    stations1.append('서울' + name[:-1] + '경찰서') # 서울OO경찰서로 바꿔주려고
 
-# 지도 로딩 후 마크 표시하기
-import folium
-fm = folium.Map(location = [37.5636465, 126.9895796])
-folium.Marker([37.5636465, 126.9895796], popup = "서울중부경찰서",
-             icon = folium.Icon(icon = "cloud")).add_to(fm)
+a = []
+for i in range(0, 30):
+    a.append(stations2[i][0]["geometry"]["location"]["lat"])
+
+b = []
+for i in range(0, 30):
+    b.append(stations2[i][0]["geometry"]["location"]["lng"])
+
+fm = folium.Map(location =(37.5, 127))
+for i in range(0, 30):
+    folium.Marker([a[i], b[i]], icon = folium.Icon(icon = "cloud")).add_to(fm)
+fm
