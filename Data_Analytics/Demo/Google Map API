@@ -1,0 +1,23 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+%matplotlib notebook
+import matplotlib.pyplot as plt
+import googlemaps
+gmaps_key = "AIzaSyDaxET0a61q9RVl8GXHajDiYONxSwpkSt8"
+gmaps = googlemaps.Client(key = gmaps_key)
+
+crime_seoul = pd.read_csv("crime_Seoul2.csv", encoding = "utf-8",
+                         index_col = 0)
+
+# 위치 파악하기 / 위도-경도 추출
+tmp2 = gmaps.geocode("서울중부경찰서", language = "kr")
+tmp2[0].get("fomartted_address")
+tmp3 = tmp2[0].get("geometry")
+tmp3["location"]["lat"], tmp3["location"]["lng"]
+
+# 지도 로딩 후 마크 표시하기
+import folium
+fm = folium.Map(location = [37.5636465, 126.9895796])
+folium.Marker([37.5636465, 126.9895796], popup = "서울중부경찰서",
+             icon = folium.Icon(icon = "cloud")).add_to(fm)
