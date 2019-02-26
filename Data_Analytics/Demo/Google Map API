@@ -26,5 +26,5 @@ for i in range(0, 30):
 
 fm = folium.Map(location =(37.5, 127))
 for i in range(0, 30):
-    folium.Marker([a[i], b[i]], icon = folium.Icon(icon = "cloud")).add_to(fm)
+    folium.Marker([a[i], b[i]], popup = stations1[i], icon = folium.Icon(icon = "cloud")).add_to(fm)
 fm
