@@ -223,3 +223,13 @@ def main():
     print(y, "\n")
     print("x + y")
     print(x + y)
+
+##################### 마스킹 연산
+x = np.arange(5)
+
+x < 3     # array([ True,  True,  True, False, False])
+
+x > 5     # array([False, False, False, False, False])
+
+x[x < 3]  # array([0, 1, 2])
+
