@@ -233,3 +233,11 @@ x > 5     # array([False, False, False, False, False])
 
 x[x < 3]  # array([0, 1, 2])
 
+##################### 양치기 소년 거짓말 횟수 
+
+daily_liar_data = [0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+
+def main():
+    liar_array = np.array(daily_liar_data)
+    # print(liar_array[liar_array == 0].size)
+    print(np.count_nonzero(liar_array == 0))
