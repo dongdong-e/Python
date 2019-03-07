@@ -1,0 +1,63 @@
+# 0부터 5사이 랜덤한 값이 담긴 3x5 array를 만들어 봅시다!
+np.random.randint(0, 5, (3, 5))
+
+######################################################
+
+def main():
+    print("1차원 array")
+    array = np.arange(10)
+    print(array)
+
+    # Q1. array의 자료형을 출력해보세요.
+    print(type(array))
+    
+    # Q2. array의 차원을 출력해보세요.
+    print(array.ndim)
+    
+    # Q3. array의 모양을 출력해보세요.
+    print(array.shape)
+    
+    # Q4. array의 크기를 출력해보세요.
+    print(array.size)
+    
+    # Q5. array의 dtype(data type)을 출력해보세요.
+    print(array.dtype)
+    
+    # Q6. array의 5번째 요소를 출력해보세요.
+    print(array[5])
+    
+    # Q7. array의 3번째 요소부터 5번째 요소까지 출력해보세요.
+    print(array[3:6])
+
+######################################################
+
+def main():
+    print("2차원 array")
+    
+    #1부터 15까지 들어있는 (3,5)짜리 배열을 만듭니다.
+    
+    matrix = np.arange(1, 16).reshape(3,5)
+    print(matrix)
+    
+    # Q1. matrix의 자료형을 출력해보세요.
+    print("자료형 : ", type(matrix) )
+    
+    # Q2. matrix의 차원을 출력해보세요.
+    print("차원 : ", matrix.ndim )
+    
+    # Q3. matrix의 모양을 출력해보세요.
+    print("모양 : ", matrix.shape )
+    
+    # Q4. matrix의 크기를 출력해보세요.
+    print("크기 : ", matrix.size )
+    
+    # Q5. matrix의 dtype(data type)을 출력해보세요.
+    print("dtype :", matrix.dtype )
+    
+    # Q6. matrix의 (2,3)번째 요소를 출력해보세요.
+    print(matrix[2,3])
+    
+    # Q7. matrix의 행은 0번째부터 1번째까지, 열은 1번째부터 3번째까지 출력해보세요.
+    print(matrix[0:2, 1:4])
+
+######################################################
