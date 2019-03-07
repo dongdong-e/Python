@@ -75,3 +75,91 @@ def main():
     
     print(matrix)
     print("shape : ", matrix.shape)
+
+######################################################
+
+def main():
+    print("array")
+    array = np.arange(8)
+    print(array)
+    print("shape : ", array.shape, "\n")
+
+
+    # Q1. array를 (2,4) 크기로 reshape하여 matrix에 저장한 뒤 matrix와 그의 shape를 출력해보세요.
+    print("# reshape (2, 4)")
+    matrix = array.reshape(2, 4)
+    
+    print(matrix)
+    print("shape : ", matrix.shape)
+ 
+######################################################
+
+def main():
+    print("matrix")
+    matrix = np.array([[0,1,2,3],[4,5,6,7]])
+    print(matrix)
+    print("shape : ", matrix.shape, "\n")
+
+
+    # Q1. matrix 두 개를 세로로 붙이기
+    '''
+    [[0 1 2 3]
+     [4 5 6 7]
+     [0 1 2 3]
+     [4 5 6 7]]
+    '''
+    m = np.concatenate([matrix, matrix], axis = 0)
+    
+    print(m, "\n")
+    
+    
+    # Q2. matrix 두 개를 가로로 붙이기
+    '''
+    [[0 1 2 3 0 1 2 3]
+     [4 5 6 7 4 5 6 7]]
+    '''
+    n = np.concatenate([matrix, matrix], axis = 1)
+    
+    print(n)
+
+######################################################
+
+def main():
+    print("matrix")
+    matrix = np.array([[ 0, 1, 2, 3],
+                       [ 4, 5, 6, 7],
+                       [ 8, 9,10,11], 
+                       [12,13,14,15]])
+    print(matrix, "\n")
+
+    # Q1. matrix를 [3] 행에서 axis 0으로 나누기
+    '''
+    [[0  1   2  3]
+     [4  5   6  7]
+     [8  9  10 11]],
+     
+     [12 13 14 15]
+    '''
+    a, b = np.split(matrix, [3], axis = 0)
+    
+    print(a, "\n")
+    print(b, "\n")
+    
+    
+    # Q2. matrix를 [1] 열에서 axis 1로 나누기
+    '''
+    [[ 0]
+     [ 4]
+     [ 8]
+     [12]],
+     
+    [[ 1  2  3]
+     [ 5  6  7]
+     [ 9 10 11]
+     [13 14 15]]
+    '''
+    
+    c, d = np.split(matrix, [1], axis = 1)
+    
+    print(c, "\n")
+    print(d)
