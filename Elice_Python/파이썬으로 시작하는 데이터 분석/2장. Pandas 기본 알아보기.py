@@ -72,3 +72,44 @@ def main():
 
 # 정수 인덱싱을 사용하여 데이터프레임의 1번째부터 3번째 인덱스를 출력해봅시다.
     print(country.iloc[1:4])
+    
+########### pandas 연산과 함수
+
+def main():
+    print("A: ")
+    A = pd.DataFrame(np.random.randint(0, 10, (2, 2)), columns=list("AB"))      #칼럼이 A, B입니다.
+    print(A, "\n")
+
+    print("B: ")
+    B = pd.DataFrame(np.random.randint(0, 10, (3, 3)), columns=list("BAC"))     #칼럼이 B, A, C입니다.
+    print(B, "\n")
+
+#밑에 데이터프레임 연산 코드를 입력해 주세요.
+    print(A + B)
+    print(A.add(B, fill_value = 0))
+    
+########### DataFrame 정렬하기
+
+def main():
+    print("DataFrame: ")
+    df = pd.DataFrame({
+        'col1' : [2, 1, 9, 8, 7, 4],
+        'col2' : ['A', 'A', 'B', np.nan, 'D', 'C'],
+        'col3': [0, 1, 9, 4, 2, 3],
+    })
+    print(df, "\n")
+
+    # 정렬 코드 입력해보기    
+    # Q1. col1을 기준으로 오름차순으로 정렬하기.
+    data1 = df.sort_values('col1', ascending = True)
+    print(data1, "\n")
+    
+    
+    # Q2. col2를 기준으로 내림차순으로 정렬하기
+    data2 = df.sort_values('col2', ascending = False)
+    print(data2, "\n")
+    
+    
+    # Q3. col2를 기준으로 오름차순으로, col1를 기준으로 내림차순으로 정렬하기
+    data3 = df.sort_values(['col2', 'col1'], ascending = [True, False])
+    print(data3)
