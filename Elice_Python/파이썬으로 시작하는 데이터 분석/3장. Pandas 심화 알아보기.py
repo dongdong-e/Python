@@ -48,3 +48,13 @@ df
 # lambda 표현식 사용하기
 df["Square"] = df.Num.apply(lambda x: x ** 2)
 
+# replace: apply 기능에서 데이터 값만 대체
+df = pd.DataFrame(columns = ["Sex"])
+df.loc[0] = "Male"
+df.loc[1] = "Male"
+df.loc[2] = "Female"
+df.loc[3] = "Female"
+df.loc[4] = "Male"
+
+df.Sex.replace({"Male": 0, "Female": 1}, inplace = True)
+df.Sex.replace({"Male": 0, "Female": 1}, inplace = True, inplace = True) # 데이터 프레임에서 데이터 프레임으로 바로 전환
