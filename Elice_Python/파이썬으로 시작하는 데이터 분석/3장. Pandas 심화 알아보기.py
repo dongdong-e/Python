@@ -77,3 +77,29 @@ def main():
     # 람다 표현식으로도 적용하기
     df["Square"] = df.Num.apply[lambda: x, x ** 2]
     print(df)
+
+##### 그룹으로 묶기
+# groupby 이용
+df = pd.DataFrame({'key': ['A', 'B', 'C', 'A', 'B', 'C'],
+                  'data1': [1, 2, 3, 1, 2, 3],
+                   'data2': np.random.randint(0, 6, 6)})
+df.groupby('key')
+df.groupby('key').sum()
+df.groupby(['key', 'data1']).sum()
+
+# agreegate 이용
+def main():
+    df = pd.DataFrame({
+        'key': ['A', 'B', 'C', 'A', 'B', 'C'],
+        'data1': [0, 1, 2, 3, 4, 5],
+        'data2': [4, 4, 6, 0, 6, 1]
+    })
+    print("DataFrame:")
+    print(df, "\n")
+    
+    # aggregate를 이용하여 요약 통계량을 산출해봅시다.
+    # 데이터 프레임을 'key' 칼럼으로 묶고, data1과 data2 각각의 최솟값, 중앙값, 최댓값을 출력하세요.
+    print(df.groupby('key').aggregate([min, np.median, max]))
+    
+    # 데이터 프레임을 'key' 칼럼으로 묶고, data1의 최솟값, data2의 합계를 출력하세요.
+    print(df.groupby('key').aggregate({'data1': min, 'data2': np.sum}))
