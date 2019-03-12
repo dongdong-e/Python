@@ -114,3 +114,28 @@ df = pd.DataFrame(
     np.random.randn(4, 4),
     columns = [["A", "A", "B", "B"], ["1", "2", "1", "2"]]
 )
+
+##### [실습] 피리 부는 사나이를 따라가는 아이들
+
+def main():
+    # 파일을 읽어서 코드를 작성해보세요
+    # 경로: "./data/the_pied_piper_of_hamelin.csv"
+    df = pd.read_csv("./data/the_pied_piper_of_hamelin.csv")
+    
+    
+    # 일차별로 아이들의 평균 나이 구하기
+    # 마스킹 연산으로 Child만 출력
+    children = df[df["구분"] == "Child"]
+    print(children)
+    
+    # 일차별로 그룹 지정하여 평균 나이 구하기
+    print(children.groupby("일차").mean())
+    
+    
+    # 일차별로 남자 아이와 여자 아이의 평균 나이 구하기
+    # 피벗 테이블로 만들어서 평균 구하기
+    print(children.pivot_table(index = "일차", columns = "성별", values = "나이", aggfunc = np.mean))
+    
+    # 아이들의 이름 구하기
+    for name in children["이름"].unique():
+        print(name)
