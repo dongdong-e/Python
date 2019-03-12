@@ -103,3 +103,14 @@ def main():
     
     # 데이터 프레임을 'key' 칼럼으로 묶고, data1의 최솟값, data2의 합계를 출력하세요.
     print(df.groupby('key').aggregate({'data1': min, 'data2': np.sum}))
+
+# MultiIndex (멀티인덱스) -> 인덱스를 계층적으로 만들 수 있다
+df = pd.DataFrame(
+    np.random.randn(4, 2),
+    index = [['A', 'A', 'B', 'B'], [1, 2, 1, 2]],
+    columns = ['data1', 'data2'])
+
+df = pd.DataFrame(
+    np.random.randn(4, 4),
+    columns = [["A", "A", "B", "B"], ["1", "2", "1", "2"]]
+)
