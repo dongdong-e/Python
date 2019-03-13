@@ -91,3 +91,25 @@ axes.legend(
     fancybox = True,      # 둥근 모서리 생성 / 비생성
     borderpad = 1         # 박스의 크기
 )
+
+# Scatter(산점도 그래프)
+fig, axes = plt.subplots()
+x = np.arange(30)
+axes.plot(
+    x, x ** 2, "o",               # x축 = x / y축 = x^2 / 원으로 표시
+    markersize = 5,               # 원사이즈
+    markerfacecolor = "white",    # 원내부 색상 지정
+    markeredgecolor = "blue"      # 원 테두리 색상 지정
+)
+
+fig, axes = plt.subplots()
+x = np.random.randn(50)     # 정규분포에서 50개씩 무작위 추출
+y = np.random.randn(50)     # 정규분포에서 50개씩 무작위 추출
+
+colors = np.random.randint(0, 100, 50)     # 0부터 100 사이 50개 무작위 추출  
+sizes = 500 * np.pi * np.random.rand(50) ** 2
+
+axes.scatter(
+    x, y, c = colors, s = sizes, alpha = 0.6    # alpha값 = 점의 투명도 조절
+)
+
