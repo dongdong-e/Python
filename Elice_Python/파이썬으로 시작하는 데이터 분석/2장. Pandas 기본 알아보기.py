@@ -17,7 +17,7 @@ def main():
     population = pd.Series(population_dic)
     print(population)
 
-########## DataFrame (데이터 프레임) 만들기
+###### DataFrame (데이터 프레임) 만들기
 
 def main():
     print("Population series data:")
@@ -58,7 +58,7 @@ def main():
     print(country.index)
     print(country.columns)
 
-########### loc (명시적 인덱싱) / iloc (정수 인덱싱)
+###### loc (명시적 인덱싱) / iloc (정수 인덱싱)
 
 def main():
 # 첫번째 컬럼을 인덱스로 country.csv 파일 읽어오기.
@@ -88,7 +88,7 @@ def main():
     print(A + B)
     print(A.add(B, fill_value = 0))
     
-########### DataFrame 정렬하기
+##### DataFrame 정렬하기
 
 def main():
     print("DataFrame: ")
