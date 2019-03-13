@@ -1,7 +1,7 @@
-<h1> 0부터 5사이 랜덤한 값이 담긴 3x5 array를 만들어 봅시다! </h1>
+# 0부터 5사이 랜덤한 값이 담긴 3x5 array를 만들어 봅시다!
 np.random.randint(0, 5, (3, 5))
 
-##################### array 자료형, 차원, 모양, 크기, 타입
+##### array 자료형, 차원, 모양, 크기, 타입
 
 def main():
     print("1차원 array")
@@ -29,7 +29,7 @@ def main():
     # Q7. array의 3번째 요소부터 5번째 요소까지 출력해보세요.
     print(array[3:6])
 
-##################### 2차원 array
+##### 2차원 array
 
 def main():
     print("2차원 array")
@@ -60,7 +60,7 @@ def main():
     # Q7. matrix의 행은 0번째부터 1번째까지, 열은 1번째부터 3번째까지 출력해보세요.
     print(matrix[0:2, 1:4])
 
-##################### array reshape하기
+##### array reshape하기
 
 def main():
     print("array")
@@ -76,7 +76,7 @@ def main():
     print(matrix)
     print("shape : ", matrix.shape)
 
-##################### array reshape 활용
+##### array reshape 활용
 
 def main():
     print("array")
@@ -92,7 +92,7 @@ def main():
     print(matrix)
     print("shape : ", matrix.shape)
  
-##################### concatenate 활용하여 array 붙이기
+##### concatenate 활용하여 array 붙이기
 
 def main():
     print("matrix")
@@ -122,7 +122,7 @@ def main():
     
     print(n)
 
-##################### split 사용하여 array 
+##### split 사용하여 array 
 
 def main():
     print("matrix")
@@ -164,7 +164,7 @@ def main():
     print(c, "\n")
     print(d)
 
-##################### 브로드캐스팅(Broadcasting) 연산
+##### 브로드캐스팅(Broadcasting) 연산
 
 def main():
     array = np.array([1,2,3,4,5])
@@ -224,7 +224,8 @@ def main():
     print("x + y")
     print(x + y)
 
-##################### 마스킹 연산
+##### 마스킹 연산
+
 x = np.arange(5)
 
 x < 3     # array([ True,  True,  True, False, False])
@@ -233,7 +234,7 @@ x > 5     # array([False, False, False, False, False])
 
 x[x < 3]  # array([0, 1, 2])
 
-##################### 양치기 소년 거짓말 횟수 
+##### 양치기 소년 거짓말 횟수 
 
 daily_liar_data = [0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0]
 
