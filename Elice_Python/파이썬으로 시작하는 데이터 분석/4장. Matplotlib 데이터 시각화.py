@@ -16,7 +16,7 @@ plt.ylabel("y") # y축 이름
 x = [1, 2, 3, 4, 5]
 y = [1, 2, 3, 4, 5]
 
-fig, axes = plt.subplots() # figure는 도화지
+fig, axes = plt.subplots()      # figure는 도화지
 axes.plot(x, y)
 axes.set_title("First Plot")
 axes.set_xlabel("x")
@@ -25,7 +25,7 @@ axes.set_ylabel("y")
 # 그래프 저장하기
 x = [1, 2, 3, 4, 5]
 y = [1, 2, 3, 4, 5]
-fig, axes = plt.subplots() # figure는 도화지 / ax는 도화지 안에 그래프를 그릴 수 있는 곳
+fig, axes = plt.subplots()      # figure는 도화지 / ax는 도화지 안에 그래프를 그릴 수 있는 곳
 axes.plot(x, y)
 axes.set_title("First Plot")
 axes.set_xlabel("x")
@@ -36,15 +36,15 @@ fig.savefig("first_plot.png")
 # 그래프 여러개 그리기
 # numpy의 linspace 함수를 이용 / 0부터 4 * pi까지 100개의 구간으로 나눔
 x = np.linspace(0, np.pi * 4, 100)
-fig, axes = plt.subplots(2, 1) # 2개의 그래프를 세로축으로 그리기 (앞 그래프 개수)
+fig, axes = plt.subplots(2, 1)      # 2개의 그래프를 세로축으로 그리기 (앞 그래프 개수)
 axes[0].plot(x, np.sin(x))
 axes[1].plot(x, np.cos(x))
 
 ##### Matplotlib 그래프 종류
 # Line plot
-fig, axes = plt.subplots() # subplots에 값을 넣지 않으면 1개의 도화지와 1개의 그래프만 그림
-x = np.arange(15) # x축을 0부터 14까지 지정
-y = x ** 2 # y축을 x의 제곱값으로 지정
+fig, axes = plt.subplots()    # subplots에 값을 넣지 않으면 1개의 도화지와 1개의 그래프만 그림
+x = np.arange(15)             # x축을 0부터 14까지 지정
+y = x ** 2                    # y축을 x의 제곱값으로 지정
 axes.plot(
     x, y,
     linestyle = ":",
@@ -57,26 +57,37 @@ x = np.arange(10)
 fig, axes = plt.subplots()
 fig.set_dpi(200)
 
-axes.plot(x, x, linestyle = "-") # solid style
-axes.plot(x, x + 1, linestyle = "--") # dashed style
-axes.plot(x, x + 2, linestyle = "-.") # dashdot style
-axes.plot(x, x + 3, linestyle = ":") # dotted style
+axes.plot(x, x, linestyle = "-")         # solid style
+axes.plot(x, x + 1, linestyle = "--")    # dashed style
+axes.plot(x, x + 2, linestyle = "-.")    # dashdot style
+axes.plot(x, x + 3, linestyle = ":")     # dotted style
 
 # Color
 x = np.arange(10)
 fig, axes = plt.subplots()
-axes.plot(x, x, color = "r") # red, blue, green 등의 앞글자로 표현
-axes.plot(x, x + 1, color = "green") # 색깔의 영문명으로 표현
-axes.plot(x, x + 2, color = "0.8") # 0 ~ 1 사이값은 회색조로 표현
-axes.plot(x, x + 3, color = "#524FA1") # RGP의 16진수 코드로 표현
+axes.plot(x, x, color = "r")             # red, blue, green 등의 앞글자로 표현
+axes.plot(x, x + 1, color = "green")     # 색깔의 영문명으로 표현
+axes.plot(x, x + 2, color = "0.8")       # 0 ~ 1 사이값은 회색조로 표현
+axes.plot(x, x + 3, color = "#524FA1")   # RGP의 16진수 코드로 표현
 
 # Marker
 x = np.arange(10)
 fig, axes = plt.subplots()
-axes.plot(x, x, marker = ".") # 작은 점으로 표현
-axes.plot(x, x + 1, marker = "o") # 원으로 표현
-axes.plot(x, x + 2, marker = "v") # 세모로 표현
-axes.plot(x, x + 3, marker = "s") # 네모로 표현
-axes.plot(x, x + 4, marker = "*") # 별모양으로 표현
+axes.plot(x, x, marker = ".")         # 작은 점으로 표현
+axes.plot(x, x + 1, marker = "o")     # 원으로 표현
+axes.plot(x, x + 2, marker = "v")     # 세모로 표현
+axes.plot(x, x + 3, marker = "s")     # 네모로 표현
+axes.plot(x, x + 4, marker = "*")     # 별모양으로 표현
 
-
+# 범례 만들기
+fig, axes = plt.subplots()
+axes.plot(x, x, label = 'y = x', color = "red") # 라벨값(y = x)을 입력
+axes.plot(x, x ** 2, label = "y = x^2", color = "blue") # 라벨값(y = x^2)을 입력
+axes.set_xlabel("x")
+axes.set_ylabel("y")
+axes.legend(
+    loc = "upper left",   # loc (상단: upper, 하단: lower, 오른쪽: right, 왼쪽: right, 중앙: center)
+    shadow = True,        # 그림자 생성 / 비생성
+    fancybox = True,      # 둥근 모서리 생성 / 비생성
+    borderpad = 1         # 박스의 크기
+)
