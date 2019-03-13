@@ -61,3 +61,12 @@ axes.plot(x, x, linestyle = "-") # solid style
 axes.plot(x, x + 1, linestyle = "--") # dashed style
 axes.plot(x, x + 2, linestyle = "-.") # dashdot style
 axes.plot(x, x + 3, linestyle = ":") # dotted style
+
+# Color
+x = np.arange(10)
+fig, axes = plt.subplots()
+axes.plot(x, x, marker = ".") # 작은 점으로 표현
+axes.plot(x, x + 1, marker = "o") # 원으로 표현
+axes.plot(x, x + 2, marker = "v") # 세모로 표현
+axes.plot(x, x + 3, marker = "s") # 네모로 표현
+axes.plot(x, x + 4, marker = "*") # 별모양으로 표현
