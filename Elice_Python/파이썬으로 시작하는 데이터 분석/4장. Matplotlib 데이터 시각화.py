@@ -41,7 +41,7 @@ axes[0].plot(x, np.sin(x))
 axes[1].plot(x, np.cos(x))
 
 ##### Matplotlib 그래프 종류
-#Line plot
+# Line plot
 fig, axes = plt.subplots() # subplots에 값을 넣지 않으면 1개의 도화지와 1개의 그래프만 그림
 x = np.arange(15) # x축을 0부터 14까지 지정
 y = x ** 2 # y축을 x의 제곱값으로 지정
