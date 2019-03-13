@@ -65,8 +65,18 @@ axes.plot(x, x + 3, linestyle = ":") # dotted style
 # Color
 x = np.arange(10)
 fig, axes = plt.subplots()
+axes.plot(x, x, color = "r") # red, blue, green 등의 앞글자로 표현
+axes.plot(x, x + 1, color = "green") # 색깔의 영문명으로 표현
+axes.plot(x, x + 2, color = "0.8") # 0 ~ 1 사이값은 회색조로 표현
+axes.plot(x, x + 3, color = "#524FA1") # RGP의 16진수 코드로 표현
+
+# Marker
+x = np.arange(10)
+fig, axes = plt.subplots()
 axes.plot(x, x, marker = ".") # 작은 점으로 표현
 axes.plot(x, x + 1, marker = "o") # 원으로 표현
 axes.plot(x, x + 2, marker = "v") # 세모로 표현
 axes.plot(x, x + 3, marker = "s") # 네모로 표현
 axes.plot(x, x + 4, marker = "*") # 별모양으로 표현
+
+
