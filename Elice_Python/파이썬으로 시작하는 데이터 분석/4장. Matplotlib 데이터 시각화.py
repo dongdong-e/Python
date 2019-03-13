@@ -1,4 +1,4 @@
-# 그래프 그려보기
+##### 그래프 그려보기
 x = [1, 2, 3, 4, 5]
 y = [1, 2, 3, 4, 5]
 plt.plot(x, y)
@@ -36,6 +36,6 @@ fig.savefig("first_plot.png")
 # 그래프 여러개 그리기
 # numpy의 linspace 함수를 이용 / 0부터 4 * pi까지 100개의 구간으로 나눔
 x = np.linspace(0, np.pi * 4, 100)
-fig, axes = plt.subplots(2, 1) # 2개의 그래프를 세로축으로 그리기 (앞에가 그래프 개수)
+fig, axes = plt.subplots(2, 1) # 2개의 그래프를 세로축으로 그리기 (앞 그래프 개수)
 axes[0].plot(x, np.sin(x))
 axes[1].plot(x, np.cos(x))
