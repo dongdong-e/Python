@@ -136,7 +136,7 @@ ax.set_ylabel("Defense", color = "white")
 ax.legend(loc = "upper left")
 fig.set_dpi(300)
 
-##### 
+##### [실습] 토끼와 거북이 경주 결과 시각화
 # 인덱스값 수정하는 방법(1)
 df = pd.read_csv("./data/the_hare_and_the_tortoise.csv", index = 0)
     
