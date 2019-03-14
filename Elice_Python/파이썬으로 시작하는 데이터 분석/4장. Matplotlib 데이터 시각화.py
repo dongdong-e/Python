@@ -135,3 +135,18 @@ ax.set_xlabel("Attack", color = "white")
 ax.set_ylabel("Defense", color = "white")
 ax.legend(loc = "upper left")
 fig.set_dpi(300)
+
+##### 
+# 인덱스값 수정하는 방법(1)
+df = pd.read_csv("./data/the_hare_and_the_tortoise.csv", index = 0)
+    
+# 인덱스값 수정하는 방법(2)
+df.set_index("시간", inplace = True)
+    
+fig, ax = plt.subplots()
+ax.plot(df["토끼"], label = "토끼")
+ax.plot(df["거북이"], label = "거북이")
+ax.legend(loc = "upper left")
+   
+fig.savefig("plot.png")
+elice_utils.send_image("plot.png")
