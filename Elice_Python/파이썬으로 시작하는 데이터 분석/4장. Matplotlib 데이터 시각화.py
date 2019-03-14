@@ -113,3 +113,25 @@ axes.scatter(
     x, y, c = colors, s = sizes, alpha = 0.6    # alpha값 = 점의 투명도 조절
 )
 
+# Matplotlib with pandas
+df = pd.read_csv("pokemon.csv")
+df.head()
+
+## Type 1 또는 Type 2에 Fire 속성만 추출
+fire = df[
+    (df['Type 1'] == 'Fire') | ((df['Type 2']) == 'Fire')]
+## Type 2 또는 Type 2에 Water 속성만 추출
+water = df[
+    (df['Type 1'] == "Water") | ((df['Type 2']) == 'Water')]
+
+fig, ax = plt.subplots()
+## x축은 Fire의 Attack / y축은 Fire의 Defence / s는 사이즈
+ax.scatter(fire['Attack'], fire['Defense'],
+          color = "red", label = "Fire", marker = "*", s = 25)
+## x축은 Water의 Attack / y축은 Water의 Defence / s는 사이즈
+ax.scatter(water['Attack'], water['Defense'],
+          color = "blue", label = "Water", marker = ".", s = 25)
+ax.set_xlabel("Attack", color = "white")
+ax.set_ylabel("Defense", color = "white")
+ax.legend(loc = "upper left")
+fig.set_dpi(300)
