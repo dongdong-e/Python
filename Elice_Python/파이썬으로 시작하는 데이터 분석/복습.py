@@ -72,3 +72,25 @@ x = np.arange(5)
 x < 3    # array([ True,  True,  True, False, False])
 x > 5    # array([False, False, False, False, False])
 x[x < 3]    # array([0, 1, 2])
+
+#### [실습] 양치기 소년의 거짓말 횟수 구하기
+# 진실 = 1 / 거짓말 = 0
+daily_liar_data = [0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0,
+                   0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
+                   0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+                   1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1,
+                   0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1,
+                   1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1,
+                   0, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+
+liar_array = np.array(daily_liar_data)
+liar_array.dtype    # 데이터 타입 추출
+liar_array.size     # 데이터 크기
+len(liar_array)     # 데이터 길이
+
+print(liar_array == 0)                     # 마스킹 연산 적용 True값(0)만 추력
+print(liar_array[liar_array == 0])         # True값을 0으로 출력
+print(len(liar_array[liar_array == 0]))    # 데이터 갯수 출력
+
+# nonzero -> 0이거나 False가 아닌 데이터를 카운팅
+print(np.count_nonzero(liar_array  == 0))
