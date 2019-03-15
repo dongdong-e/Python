@@ -48,3 +48,27 @@ x = np.arange(4).reshape((2, 2))
 y = np.random.randint(10, size = (2, 2))
 x + y
 x - y
+
+#### 브로드캐스팅
+# Broadcasting -> shape가 다른 array끼리 연산
+matrix + 5
+matrix + np.array([1, 2, 3, 4])
+np.arange(3).reshape((3, 1)) + np.arange(3)
+
+#### 집계함수 & 마스킹연산
+# 집계함수
+x = np.arange(8).reshape((2, 4))
+np.sum(x)    # 28
+np.min(x)    # 0
+np.max(x)    # 7
+np.mean(x)   # 3.5
+np.std(x)    # 2.29128...
+
+np.sum(x, axis = 0)    # array([ 4,  6,  8, 10])
+np.sum(x, axis = 1)    # array([ 6, 22])
+
+# 마스킹 연산
+x = np.arange(5)
+x < 3    # array([ True,  True,  True, False, False])
+x > 5    # array([False, False, False, False, False])
+x[x < 3]    # array([0, 1, 2])
