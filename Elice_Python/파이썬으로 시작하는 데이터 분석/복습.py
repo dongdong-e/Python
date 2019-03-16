@@ -95,6 +95,36 @@ print(len(liar_array[liar_array == 0]))    # 데이터 갯수 출력
 # nonzero -> 0이거나 False가 아닌 데이터를 카운팅
 print(np.count_nonzero(liar_array  == 0))
 
+###############################################################################
 
 ##### 2장. Pandas 기본 알아보기
 #### Series 데이터
+# numpy array가 보강된 형태
+data = pd.Series([1, 2, 3, 4])
+
+# 인덱스를 가지고 있고, 인덱스로 접근 가능
+data = pd.Series([1, 2 ,3, 4], index = ['a', 'b', 'c', 'd'])
+data['b']     # 'a': 1, 'b': 2, 'c': 3, 'd': 4
+
+# 딕셔너리로 만들 수 있다.
+population_dict = {
+    'korea': 5180,
+    'japan': 12718,
+    'china': 141500,
+    'usa': 32676
+}
+population = pd.Series(population_dict)     # 딕셔너리의 key값 = index값 / Value값 = data값
+
+#### DataFrame
+# 여러 개의 Series가 모여서 행과 열을 이룬 데이터
+gdp_dict = {
+    'korea': 169320000,
+    'japan': 516700000,
+    'china': 1409250000,
+    'usa': 2041280000
+}
+gdp = pd.Series(gdp_dict)
+country = pd.DataFrame({
+    'population': population,
+    'gdp': gdp
+})
