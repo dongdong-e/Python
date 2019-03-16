@@ -9,13 +9,13 @@ np.concatenate([x, y])
 
 # np.concatenate -> axis 축을 기준으로 이어붙이기
 matrix = np.arange(4).reshape(2, 2)
-np.concatenate([matrix, matrix], axis = 0) # 세로로 잇기
-np.concatenate([matrix, matrix], axis = 1) # 가로로 잇기
+np.concatenate([matrix, matrix], axis = 0)     # 세로로 잇기
+np.concatenate([matrix, matrix], axis = 1)     # 가로로 잇기
 
 # np.split -> axis 축을 기준으로 나누기
 matrix = np.arange(16).reshape(4, 4)
-upper, lower = np.split(matrix, [3], axis = 0) # 세로 인덱스 번호로 자르기
-left, right = np.split(matrix, [3], axis = 1) # 가로 인덱스 번호로 자르기
+upper, lower = np.split(matrix, [3], axis = 0)     # 세로 인덱스 번호로 자르기
+left, right = np.split(matrix, [3], axis = 1)      # 가로 인덱스 번호로 자르기
 
 #### Numpy 연산
 # 루프는 느리다
