@@ -97,7 +97,6 @@ print(np.count_nonzero(liar_array  == 0))
 
 ###############################################################################
 
-##### 2장. Pandas 기본 알아보기
 #### Series 데이터
 # numpy array가 보강된 형태
 data = pd.Series([1, 2, 3, 4])
@@ -128,3 +127,15 @@ country = pd.DataFrame({
     'population': population,
     'gdp': gdp
 })
+
+# Series도 numpy array처럼 연산자를 쓸 수 있다.
+gdp_per_capita = country['gdp'] / country['population']     # 1인당 gdp 구하기
+country['gdp per capita'] = gdp_per_capita                  # country 데이터 프레임에 'gdp per capita'를 추가
+
+# 만든 데이터 프레임을 저장할 수 있다.
+country.to_csv("./country.csv")
+country.to_excel("country.xlsx")
+
+# 저장한 데이터 프레임을 불러올 수 있다.
+country = pd.read_csv("./country.csv")
+country = pd.read_excel("country.xlsx")
