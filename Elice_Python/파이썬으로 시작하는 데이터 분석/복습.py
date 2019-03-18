@@ -275,3 +275,30 @@ df.loc[4] = "Male"
 df.Sex.replace({"Male": 0, "Female": 1})
 df.Sex.replace({"Male": 0, "Female": 1}, inplace = True)
 
+#### 그룹으로 묶기
+df = pd.DataFrame({'key': ['A', 'B', 'C', 'A', 'B', 'C'],
+                  'data1': [1, 2, 3, 1, 2, 3], 'data2': np.random.randint(0, 6, 6)})
+df.groupby('key')
+df.groupby('key').sum()
+df.groupby('key').max()
+df.groupby('key').min()
+df.groupby(['key', 'data1']).sum()     # key와 data1으로 묶기
+
+# aggregate 활용하기
+df = pd.DataFrame({
+    'data1': [0, 1, 2, 3, 4, 5],
+    'data2': [4, 4, 6, 0, 6, 1],
+    'key': ['A', 'B', 'C', 'A', 'B', 'C']
+})
+df.groupby('key').aggregate(['min', np.median, 'max'])
+df.groupby('key').aggregate({'data1': 'min', 'data2': np.sum})
+
+# filter 활용하기 - groupby를 통해서 그룹 속성을 기준으로 데이터 필터링
+def filter_by_mean(x):
+    return x['data2'].mean() > 3
+
+df.groupby('key').mean()
+df.groupby('key').filter(filter_by_mean)
+
+# apply 활용하기 -> groupby를 통해서 묶인 데이터에 함수 적용
+df.groupby('key').apply(lambda x: x.max() - x.min())
