@@ -96,7 +96,7 @@ print(len(liar_array[liar_array == 0]))    # 데이터 갯수 출력
 print(np.count_nonzero(liar_array  == 0))
 
 ###############################################################################
-
+##### 2장. Pandas 기본 알아보기
 #### Series 데이터
 # numpy array가 보강된 형태
 data = pd.Series([1, 2, 3, 4])
