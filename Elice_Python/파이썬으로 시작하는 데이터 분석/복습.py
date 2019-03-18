@@ -302,3 +302,36 @@ df.groupby('key').filter(filter_by_mean)
 
 # apply 활용하기 -> groupby를 통해서 묶인 데이터에 함수 적용
 df.groupby('key').apply(lambda x: x.max() - x.min())
+
+#### MultiIndex & pivot_table
+# Multiindex -> 인덱스를 계층적으로 만들 수 있다.
+df = pd.DataFrame(
+    np.random.randn(4, 2),
+    index = [['A', 'A', 'B', 'B'], [1, 2, 1, 2]],
+    columns = ['data1', 'data2']
+)
+
+# 열 인덱스를 계층적으로 만들기
+df = pd.DataFrame(
+    np.random.randn(4, 4),
+    columns = [['A', 'A', 'B', 'B'], ['1', '2', '1', '2']]
+)
+df["A"]     # 다중 인덱스 컬럼의 경우 인덱싱은 계층적으로 한다.
+df["A"]["1"]
+
+# pivot_table
+# index는 행 인덱스로 들어갈 key
+# columns에 열 인덱스로 라벨링될 값
+# value에 분석할 데이터
+
+df = pd.read_csv("the_pied_piper_of_hamelin.csv")
+children = df[df["구분"] == "Child"]
+children.groupby('일차').mean()
+
+df2 = children.pivot_table(index = "일차",
+                    columns = "성별",
+                    values = "나이",
+                    aggfunc = np.mean)
+
+for name in children["이름"].unique():     # 한 번이라도 참가한 아이들
+    print(name)
