@@ -196,3 +196,15 @@ df = pd.DataFrame(data)
 df['A'].sum()     # A컬럼을 모두 더한 값 출력
 df.sum()     # A와 B를 각각 더한 값
 df.mean()    # A와 B 각각의 평균값
+
+#### DataFrame 정렬하기
+# 값으로 정렬하기
+df = pd.DataFrame({
+    'col1' : [2, 1, 9, 8, 7, 4],
+    'col2' : ['A', 'A', 'B', np.nan, 'D', 'C'],
+    'col3' : [0, 1, 9, 4, 2, 3],
+})
+
+df.sort_values('col1')     # sort_values('컬럼값) -> 특정 컬럼값으로 정렬 / 기본적으로는 '오름차순'
+df.sort_values('col1', ascending = False)     # 내림차순
+df.sort_values(['col2', 'col1'])     # col2를 기준으로 내림차순 하고, col2에 A가 2개 있기 때문에 col1에서도 정렬
