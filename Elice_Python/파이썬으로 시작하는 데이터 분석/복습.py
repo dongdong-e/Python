@@ -163,3 +163,36 @@ dataframe.loc[0, '전화번호'] = '01012341234'
 # 컬럼 선택하기
 dataframe['이름']                  # 컬럼 이름이 하나만 있다면 Series
 dataframe[['이름', '전화번호']]     # 컬럼 이름이 여러개 들어가 있다면 DataFrame
+
+#### pandas 연산과 함수
+# 누락된 데이터 체크
+dataframe.isnull()     # 비어있는 값을 True로 표현
+dataframe.notnull()    # 비어있지 않은 값을 True로 표현
+
+dataframe.dropna()     # 비어있는 값을 가진 row를 삭제
+dataframe['전화번호'] = dataframe['전화번호'].fillna('전화번호 없음')     # 비어있는 값을 fillna로 채움
+
+# Series 연산
+A = pd.Series([2, 4, 6], index = [0, 1, 2])
+B = pd.Series([1, 3, 5], index = [1, 2, 3])
+
+A + B     # A에는 index 3이 없기 때문에 Null 출력 / B에는 index 1이 없기 때문에 Null 출력
+A.add(B, fill_value = 0)     # Null값을 0으로 채워서 출력
+
+# DataFrame 연산
+A = pd.DataFrame(np.random.randint(0, 10, (2, 2)), columns = list("AB"))
+B = pd.DataFrame(np.random.randint(0, 10, (3, 3)), columns = list("BAC"))
+
+A + B
+A.add(B, fill_value = 0)     # Null값을 0으로 채워서 출력
+
+# 집계 함수
+data = {
+    'A': [ i + 5 for i in range(3)],
+    'B': [ i ** 2 for i in range(3)]
+}
+df = pd.DataFrame(data)
+
+df['A'].sum()     # A컬럼을 모두 더한 값 출력
+df.sum()     # A와 B를 각각 더한 값
+df.mean()    # A와 B 각각의 평균값
