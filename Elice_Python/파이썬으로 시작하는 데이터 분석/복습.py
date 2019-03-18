@@ -139,3 +139,27 @@ country.to_excel("country.xlsx")
 # 저장한 데이터 프레임을 불러올 수 있다.
 country = pd.read_csv("./country.csv")
 country = pd.read_excel("country.xlsx")
+
+#### Indexing & Slicing
+# loc -> 명시적인 인덱스를 참조하는 인덱싱 / 슬라이싱
+country.loc['china']
+country.loc['korea':'japan', 'population':]     #한국부터 일본까지 인구 이후 데이터 출력
+
+# iloc -> 파이썬 스타일 정수 인덱싱 / 슬라이싱
+country.iloc[0]
+country.iloc[1:3, :2]     # 한국부터 중국까지 인구와 gdp를 출력
+
+# DataFrame 새 데이터 추가 / 수정
+# 리스트로 추가하는 방법과 딕셔너리로 추가하는 방법
+dataframe = pd.DataFrame(columns = ['이름', '나이', '주소'])
+dataframe.loc[0] = ['임원균', '26', '서울']                          # 리스트로 추가하는 방법
+dataframe.loc[1] = {'이름': '철수', '나이': '25', '주소': '인천'}     # 딕셔너리로 추가하는 방법
+dataframe.loc[1, '이름'] = '영희'     # 데이터 수정하는 방법
+
+# DataFrame 새 컬럼 추가
+dataframe['전화번호'] = np.nan     # not a number의 축약 -> 데이터값이 비어있게 만듦
+dataframe.loc[0, '전화번호'] = '01012341234'
+
+# 컬럼 선택하기
+dataframe['이름']                  # 컬럼 이름이 하나만 있다면 Series
+dataframe[['이름', '전화번호']]     # 컬럼 이름이 여러개 들어가 있다면 DataFrame
