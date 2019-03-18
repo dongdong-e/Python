@@ -232,3 +232,46 @@ df["A"] < 0.5     # 0.5보다 작으면 True 크면 False
 df[(df["A"] < 0.5) & (df["B"] > 0.3)]     # A가 0.5보다 작고, B가 0.3보다 큰 값 출력
 df.query("A < 0.5 and B > 0.3")     # 위와 같은 결과 출력
 
+#### 함수로 데이터 처리하기
+# apply를 통해서 함수로 데이터 다루기 (1)
+df = pd.DataFrame(np.arange(5), columns = ["Num"])
+def square(x):
+    return x ** 2
+df["Num"].apply(square)
+df["Square"] = df.Num.apply(lambda x: x ** 2)
+
+# apply를 통해서 함수로 데이터 다루기 (2)
+df = pd.DataFrame(columns =  ["phone"])
+df.loc[0] = "010-1234-1235"
+df.loc[1] = "공일공-일이삼사-1235"
+df.loc[2] = "010.1234.일이삼오"
+df.loc[3] = "공1공-1234.1이3오"
+df["preprocess_phone"] = ''
+
+def get_preprocess_phone(phone):
+    mapping_dict = {
+        "공": "0",
+        "일": "1",
+        "이": "2",
+        "삼": "3",
+        "사": "4",
+        "오": "5",
+        "-": "",
+        ".": ""
+    }
+    for key, value in mapping_dict.items():
+        phone = phone.replace(key, value)
+    return phone
+df["preprocess_phone"] = df["phone"].apply(get_preprocess_phone)
+
+# apply를 통해서 함수로 데이터 다루기 (3)
+df = pd.DataFrame(columns = ["Sex"])
+df.loc[0] = "Male"
+df.loc[1] = "Male"
+df.loc[2] = "Female"
+df.loc[3] = "Female"
+df.loc[4] = "Male"
+
+df.Sex.replace({"Male": 0, "Female": 1})
+df.Sex.replace({"Male": 0, "Female": 1}, inplace = True)
+
