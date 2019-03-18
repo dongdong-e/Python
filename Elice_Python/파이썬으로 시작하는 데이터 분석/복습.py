@@ -96,6 +96,7 @@ print(len(liar_array[liar_array == 0]))    # 데이터 갯수 출력
 print(np.count_nonzero(liar_array  == 0))
 
 ###############################################################################
+
 ##### 2장. Pandas 기본 알아보기
 #### Series 데이터
 # numpy array가 보강된 형태
@@ -221,3 +222,13 @@ tree_df.iloc[:5]
 tree_df.head(5)
 
 tree_df.to_csv("./tree_df.csv")
+
+###############################################################################
+
+##### 3장. Pandas 심화 알아보기
+#### 조건으로 검색하기
+df = pd.DataFrame(np.random.rand(5, 2), columns = ['A', 'B'])
+df["A"] < 0.5     # 0.5보다 작으면 True 크면 False
+df[(df["A"] < 0.5) & (df["B"] > 0.3)]     # A가 0.5보다 작고, B가 0.3보다 큰 값 출력
+df.query("A < 0.5 and B > 0.3")     # 위와 같은 결과 출력
+
