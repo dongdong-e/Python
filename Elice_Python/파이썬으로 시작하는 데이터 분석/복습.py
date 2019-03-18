@@ -208,3 +208,16 @@ df = pd.DataFrame({
 df.sort_values('col1')     # sort_values('컬럼값) -> 특정 컬럼값으로 정렬 / 기본적으로는 '오름차순'
 df.sort_values('col1', ascending = False)     # 내림차순
 df.sort_values(['col2', 'col1'])     # col2를 기준으로 내림차순 하고, col2에 A가 2개 있기 때문에 col1에서도 정렬
+
+#### [실습] 잭이 심은 콩나무 데이터 정렬하기
+tree_df = pd.read_csv("tree_data.csv")
+print(len(tree_df.dropna()))     # Null값이 있는지 확인
+
+tree_df.sort_values('height')     # height 오름차순 정렬
+tree_df.sort_values('height', ascending = False)    # height 내림차순 정렬
+
+tree_df = tree_df.sort_values('height', ascending = False)    # height 내림차순 정렬
+tree_df.iloc[:5]
+tree_df.head(5)
+
+tree_df.to_csv("./tree_df.csv")
