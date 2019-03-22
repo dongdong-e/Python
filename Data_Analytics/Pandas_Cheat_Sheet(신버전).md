@@ -111,7 +111,7 @@ df3.melt(
 
 
 
-- **Summarize Pandas Cheat Sheet**
+- **Apply 함수**
 
 ```python
 import pandas as pd
