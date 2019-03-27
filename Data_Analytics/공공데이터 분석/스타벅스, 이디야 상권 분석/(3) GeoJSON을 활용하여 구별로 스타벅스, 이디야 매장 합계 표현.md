@@ -849,6 +849,8 @@ map.choropleth(geo_data = geo_json,
               )
 ```
 
+![image](https://user-images.githubusercontent.com/42408554/55051281-c06a8180-5097-11e9-8c98-2fcf32194eb9.png)
+
 * **서울 각 구별 스타벅스 / 이디야 매장 총합 시각화 + folium.CircleMarker 함께 표시하기**
 
 
@@ -885,3 +887,4 @@ for n in geo_df.index:
         fill_color = icon_color
     ).add_to(map)
 ```
+![image](https://user-images.githubusercontent.com/42408554/55051293-cc564380-5097-11e9-8b99-484f05c5433e.png)
