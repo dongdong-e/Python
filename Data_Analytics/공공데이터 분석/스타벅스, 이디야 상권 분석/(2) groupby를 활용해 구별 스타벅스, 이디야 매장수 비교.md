@@ -829,15 +829,7 @@ df_cafe_brand
 )
 ```
 
-
-![png](output_14_0.png)
-
-
-
-
-
-    <ggplot: (168267840008)>
-
+![image](https://user-images.githubusercontent.com/42408554/55045384-f5b7a500-5080-11e9-8f99-8666bc7b8a97.png)
 
 
 * **시각화**
@@ -855,14 +847,5 @@ df_cafe_brand
        figure_size = (8, 4))
 )
 ```
-
-
-![png](output_16_0.png)
-
-
-
-
-
-    <ggplot: (168267846920)>
-
+![image](https://user-images.githubusercontent.com/42408554/55045420-1253dd00-5081-11e9-8d5c-5ea7ead5b76b.png)
 
