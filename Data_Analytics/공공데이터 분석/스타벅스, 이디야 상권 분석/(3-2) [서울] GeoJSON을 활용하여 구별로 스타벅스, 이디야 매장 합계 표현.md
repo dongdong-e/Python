@@ -1450,7 +1450,7 @@ for gu in df_cafe_brand_vs.index:
 
 map
 ```
-
+![image](https://user-images.githubusercontent.com/42408554/55124257-f9166380-5148-11e9-8d98-4c707a2b4d6c.png)
 
 ```python
 
