@@ -128,4 +128,3 @@ def smp(x):
 
 df["species-3"] = df["species"].apply(smp)
 ```
-
