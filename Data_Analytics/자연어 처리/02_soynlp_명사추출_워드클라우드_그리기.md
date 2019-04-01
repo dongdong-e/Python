@@ -76,23 +76,7 @@ df.shape
 df.head()
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -198,19 +182,6 @@ care.head(3)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -280,19 +251,6 @@ care.tail(3)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -663,7 +621,7 @@ def displayWordCloud(data = None, backgroundcolor = 'white', width = 800, height
 ```
 
 
-![png](output_30_0.png)
+<img width="763" alt="output_30_0" src="https://user-images.githubusercontent.com/42408554/55320119-614ea780-54b1-11e9-9260-eb881bb5b7f5.png">
 
 
     CPU times: user 36.2 s, sys: 2.16 s, total: 38.3 s
@@ -701,7 +659,7 @@ nouns = noun_extractor.extract()
 ```
 
 
-![png](output_34_0.png)
+<img width="763" alt="output_34_0" src="https://user-images.githubusercontent.com/42408554/55320170-775c6800-54b1-11e9-990d-0bca0b93fe04.png">
 
 
     CPU times: user 2.34 s, sys: 157 ms, total: 2.5 s
