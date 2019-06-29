@@ -36,6 +36,7 @@ df[df["b"] == 7] | df[df["a"] == 5]
 # frac -> 특정 비율만큼 데이터를 랜덤 샘플링
 df.sample(frac = 0.3)
 
+
 # sample - > 특정 갯수만큼 데이터를 랜덤 샘플링
 df.sample(n = 1)
 
